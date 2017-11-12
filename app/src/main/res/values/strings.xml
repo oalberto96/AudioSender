@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">"Audio Sender "</string>
+    <string name="record">"Record audio"</string>
+</resources>
