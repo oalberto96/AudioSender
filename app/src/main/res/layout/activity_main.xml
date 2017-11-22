@@ -12,5 +12,15 @@
         android:text="@string/record"
         android:onClick="onBtnClick_sendfile"
         />
+    <EditText
+        android:layout_below="@id/btn_sendfile"
+        android:id="@+id/et_humidity"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:layout_below="@id/et_humidity"
+        android:id="@+id/et_temperature"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content" />
 
 </RelativeLayout>
