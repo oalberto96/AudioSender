@@ -22,5 +22,45 @@
         android:id="@+id/et_temperature"
         android:layout_width="100dp"
         android:layout_height="wrap_content" />
+    <RelativeLayout
+
+        android:layout_below="@id/et_temperature"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:onClick="getInfo"
+            android:text="Get info"
+            android:id="@+id/btn_getinfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_below="@id/btn_getinfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Switch
+                android:checked="false"
+                android:id="@+id/swt_light"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Light" />
+            <Switch
+                android:checked="false"
+                android:id="@+id/swt_water"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Water" />
+            <Switch
+                android:checked="false"
+                android:id="@+id/swt_fan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fan" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
 
 </RelativeLayout>

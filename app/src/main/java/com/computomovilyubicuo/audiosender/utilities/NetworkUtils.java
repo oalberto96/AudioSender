@@ -29,7 +29,14 @@ import java.net.UnknownHostException;
 
 public class NetworkUtils {
 
-    public static final String HOST = "http://192.168.0.117/arduinodata";
+    public static final String HOST = "http://10.0.0.2/arduinodata";
+    public static final String HOST_GET = "http://10.0.0.2/android-actuators";
+    private String m_response;
+
+    public String getResponse(){
+        return m_response;
+    }
+
 
     public String getBodyRequest(String humidity, String temperature) throws JSONException {
         JSONObject json = new JSONObject();
@@ -38,15 +45,30 @@ public class NetworkUtils {
         return json.toString();
     }
 
-    public StringRequest getRequest(final String humidity, final String temperature){
+    public StringRequest getGetRequest(){
 
-// Request a string response from the provided URL.
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, HOST_GET,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        m_response = response;
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.wtf("NetworkUtils: ",error.toString());
+            }
+
+        });
+        return stringRequest;
+    }
+
+    public StringRequest getRequest(final String humidity, final String temperature){
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, HOST,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        // Display the first 500 characters of the response string.
                         Log.d("Response ", response);
                     }
                 }, new Response.ErrorListener() {
