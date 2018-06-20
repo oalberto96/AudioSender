@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">"Audio Sender "</string>
-    <string name="record">"Record audio"</string>
+    <string name="app_name">"GreenHouse App "</string>
+    <string name="record">"Send data"</string>
 </resources>
