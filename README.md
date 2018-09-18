@@ -21,4 +21,3 @@ Example:
 public static final String HOST = "http://10.0.0.2/arduinodata";
 public static final String HOST_GET = "http://10.0.0.2/android-actuators";
 ```
-
